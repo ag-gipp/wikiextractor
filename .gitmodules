@@ -1,0 +1,3 @@
+[submodule "wikiFilter"]
+	path = wikiFilter
+	url = https://github.com/physikerwelt/wikiFilter
