@@ -1,3 +1,26 @@
+# Featured articles test corpus
+
+This repo provides plain text documents generated from the featured articles of the english Wikipedia.
+The articles were generated in the following way:
+
+### Prefiltering
+
+```bash
+cd wikiFilter
+wget https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
+./wikiFilter.py -k '{{featured article}}' -t ''
+```
+
+
+### Conversion
+```bash
+mv wout/chunk-1.xml.bz2 testdata
+cd ..
+virtualenv venv
+source venv/bin/activate
+python setup.py install
+ ./WikiExtractor.py testdata/chunk-1.xml.bz2
+```
 # WikiExtractor
 [WikiExtractor.py](http://medialab.di.unipi.it/wiki/Wikipedia_Extractor) is a Python script that extracts and cleans text from a [Wikipedia database dump](http://download.wikimedia.org/).
 
