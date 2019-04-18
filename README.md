@@ -11,13 +11,17 @@ wget https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.
 ./wikiFilter.py -k '{{featured article}}' -t ''
 ```
 
-Foor good articles
+For good articles
 ```bash
 cd wikiFilter
 wget https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 ./wikiFilter.py -k '{{Good article}}' -t ''
 ```
-leads to 8118 articles
+Sampling articles
+```bash
+cd wikiFilter
+./wikiSample.py -f ../testdata/good.xml.bz -t 8090 -c 2000
+```
 ### Conversion
 ```bash
 mv wout/chunk-1.xml.bz2 testdata
